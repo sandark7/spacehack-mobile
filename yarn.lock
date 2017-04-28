@@ -1068,6 +1068,10 @@ balanced-match@^0.4.1:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-0.4.2.tgz#cb3f3e3c732dc0f01ee70b403f302e61d7709838"
 
+base-64@0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/base-64/-/base-64-0.1.0.tgz#780a99c84e7d600260361511c4877613bf24f6bb"
+
 base64-arraybuffer@0.1.5:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/base64-arraybuffer/-/base64-arraybuffer-0.1.5.tgz#73926771923b5a19747ad666aa5cd4bf9c6e9ce8"
@@ -2832,6 +2836,10 @@ ignite-animatable@^0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/ignite-animatable/-/ignite-animatable-0.3.1.tgz#8208a03b59b3f5e71b6e2624350ac9b90042a851"
 
+ignite-fetch-blob@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/ignite-fetch-blob/-/ignite-fetch-blob-1.0.0.tgz#38ef4bd9f7a5c2184d1d39ea94ca964b39e8c425"
+
 ignite-i18n@^0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/ignite-i18n/-/ignite-i18n-0.1.1.tgz#38e901788169f9a7b4eaaa73bbf7001c69e1b16c"
@@ -4531,6 +4539,13 @@ react-native-experimental-navigation@0.26.x:
     clamp "^1.0.1"
     fbjs "^0.8.1"
     react-addons-pure-render-mixin "^15.0.2"
+
+react-native-fetch-blob@^0.10.4:
+  version "0.10.4"
+  resolved "https://registry.yarnpkg.com/react-native-fetch-blob/-/react-native-fetch-blob-0.10.4.tgz#7e2d2096ea79dbc8da96e1915cf862f6afe2d0fd"
+  dependencies:
+    base-64 "0.1.0"
+    glob "^7.0.6"
 
 react-native-i18n@^1.0.0:
   version "1.0.0"

@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware, compose } from 'redux'
-import createLogger from 'redux-logger'
+import {createLogger} from 'redux-logger'
 import { autoRehydrate } from 'redux-persist'
 import Config from '../Config/DebugConfig'
 import createSagaMiddleware from 'redux-saga'

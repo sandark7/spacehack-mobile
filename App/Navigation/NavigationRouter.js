@@ -50,7 +50,7 @@ class NavigationRouter extends Component {
               key='saleScreen'
               drawerIcon={this.renderLeftButton()}
               component={SaleScreen}
-              title={I18n.t('sells')}
+              title={I18n.t('sells_title')}
               titleStyle={Styles.navTitle}
             />
           </Scene>

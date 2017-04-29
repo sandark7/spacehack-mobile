@@ -6,6 +6,9 @@ import { Images } from '../Themes'
 import DrawerListItem from '../Components/DrawerListItem'
 
 class DrawerContent extends Component {
+
+  contextTypes = {drawer: React.PropTypes.object}
+
   componentDidMount () {
     BackAndroid.addEventListener('hardwareBackPress', () => {
       if (this.context.drawer.props.open) {
@@ -22,6 +25,7 @@ class DrawerContent extends Component {
 
   onPress = (screen) => {
     Actions[screen]()
+    this.context.drawer.close()
   }
 
   render () {

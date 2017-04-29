@@ -20,6 +20,9 @@ export default {
     fontSize: 25,
     marginTop: -5
   },
+  navTitleNormal: {
+    textAlign: 'left'
+  },
   drawerIcon: {
     marginTop: 5.5
   },

@@ -1,9 +1,11 @@
 {
   "main_page": "Main Page",
+  "sells_title": "Sell item",
   "notifications": "Notifications",
   "messages": "Messages",
   "tracking": "Tracking",
   "purchases": "Purchases",
+  "start_selling": "Start Selling",
   "bids_n_offers": "Bids&Offers",
   "sells": "Sells",
   "subscriptions": "Subscriptions",

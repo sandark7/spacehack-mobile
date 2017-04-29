@@ -1,6 +1,8 @@
 import React from 'react'
-import { ScrollView, Text, KeyboardAvoidingView } from 'react-native'
+import { ScrollView, KeyboardAvoidingView, Button } from 'react-native'
 import { connect } from 'react-redux'
+import {Actions} from 'react-native-router-flux'
+import I18n from 'react-native-i18n'
 // Add Actions - replace 'Your' with whatever your reducer is called :)
 // import YourActions from '../Redux/YourRedux'
 
@@ -9,11 +11,19 @@ import styles from './Styles/SaleScreenStyle'
 
 class SaleScreen extends React.Component {
 
+  onPress = () => {
+    Actions.photoScreen()
+  }
+
   render () {
     return (
       <ScrollView style={styles.container}>
         <KeyboardAvoidingView behavior='position'>
-          <Text>SaleScreen Screen</Text>
+          <Button
+            style={styles.button}
+            onPress={this.onPress}
+            title={I18n.t('start_selling')}
+          />
         </KeyboardAvoidingView>
       </ScrollView>
     )

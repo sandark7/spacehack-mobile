@@ -7,6 +7,7 @@ import I18n from 'react-native-i18n'
 // screens identified by the router
 import MainScreen from '../Containers/MainScreen'
 import SaleScreen from '../Containers/SaleScreen'
+import PhotoScreen from '../Containers/PhotoScreen'
 
 import Icon from 'react-native-vector-icons/EvilIcons'
 /* **************************
@@ -51,8 +52,13 @@ class NavigationRouter extends Component {
               drawerIcon={this.renderLeftButton()}
               component={SaleScreen}
               title={I18n.t('sells_title')}
-              titleStyle={Styles.navTitle}
-            />
+              titleStyle={Styles.navTitleNormal}
+            >
+              <Scene
+                key='photoScreen'
+                component={PhotoScreen}
+              />
+            </Scene>
           </Scene>
         </Scene>
       </Router>

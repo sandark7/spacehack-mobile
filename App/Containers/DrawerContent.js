@@ -7,7 +7,7 @@ import DrawerListItem from '../Components/DrawerListItem'
 
 class DrawerContent extends Component {
 
-  contextTypes = {drawer: React.PropTypes.object}
+  static contextTypes = {drawer: React.PropTypes.object}
 
   componentDidMount () {
     BackAndroid.addEventListener('hardwareBackPress', () => {

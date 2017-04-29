@@ -3,11 +3,12 @@ import { Scene, Router } from 'react-native-router-flux'
 import Styles from './Styles/NavigationContainerStyles'
 import NavigationDrawer from './NavigationDrawer'
 import {Colors, Metrics} from '../Themes'
+import I18n from 'react-native-i18n'
 // screens identified by the router
 import MainScreen from '../Containers/MainScreen'
+import SaleScreen from '../Containers/SaleScreen'
 
 import Icon from 'react-native-vector-icons/EvilIcons'
-
 /* **************************
 * Documentation: https://github.com/aksonov/react-native-router-flux
 ***************************/
@@ -38,12 +39,19 @@ class NavigationRouter extends Component {
           >
             <Scene
               initial
-              key='launchScreen'
+              hideBackImage
+              key='mainScreen'
               drawerIcon={this.renderLeftButton()}
               component={MainScreen}
               title='ebay'
               titleStyle={Styles.navTitle}
-              hideNavBar={false}
+            />
+            <Scene
+              key='saleScreen'
+              drawerIcon={this.renderLeftButton()}
+              component={SaleScreen}
+              title={I18n.t('sells')}
+              titleStyle={Styles.navTitle}
             />
           </Scene>
         </Scene>

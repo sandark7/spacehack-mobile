@@ -8,7 +8,8 @@ export default {
   logo: {
     flex: 1,
     resizeMode: 'contain',
-    height: 126,
+    backgroundColor: Colors.ebay_blue,
+    height: 150,
     width: null,
     marginBottom: 3
   }

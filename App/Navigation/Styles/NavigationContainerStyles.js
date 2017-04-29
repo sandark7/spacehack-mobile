@@ -18,7 +18,7 @@ export default {
     fontWeight: '600',
     textAlign: 'left',
     fontSize: 25,
-    lineHeight: 23
+    marginTop: -5
   },
   drawerIcon: {
     marginTop: 5.5

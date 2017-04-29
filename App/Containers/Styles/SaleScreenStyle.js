@@ -6,9 +6,5 @@ export default StyleSheet.create({
   container: {
     marginTop: Metrics.navBarHeight,
     backgroundColor: Colors.background
-  },
-  button: {
-    backgroundColor: Colors.ebay_blue,
-    color: Colors.snow
   }
 })

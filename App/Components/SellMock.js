@@ -10,7 +10,7 @@ export default class SellMock extends React.Component {
     return (
       <View style={styles.container}>
         <Image
-          onLayout={e => LayoutHelper(e, 1573, this)}
+          onLayout={e => Layout(e, 1573, this)}
           source={Images.sell_mock}
           style={imageSize}
         />

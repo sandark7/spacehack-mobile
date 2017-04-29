@@ -53,12 +53,11 @@ class NavigationRouter extends Component {
               component={SaleScreen}
               title={I18n.t('sells_title')}
               titleStyle={Styles.navTitleNormal}
-            >
-              <Scene
-                key='photoScreen'
-                component={PhotoScreen}
-              />
-            </Scene>
+            />
+            <Scene
+              key='photoScreen'
+              component={PhotoScreen}
+            />
           </Scene>
         </Scene>
       </Router>

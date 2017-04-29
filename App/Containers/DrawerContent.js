@@ -36,7 +36,7 @@ class DrawerContent extends Component {
         <DrawerListItem onPress={() => this.onPress('mainScreen')} icon='home' title='main_page' />
         <DrawerListItem icon='notifications' title='notifications' />
         <DrawerListItem icon='email' title='messages' />
-        <Divider text="Мой eBay"/>
+        <Divider text='Мой eBay' />
         <DrawerListItem icon='visibility' title='tracking' />
         <DrawerListItem icon='featured-video' title='purchases' />
         <DrawerListItem icon='gavel' title='bids_n_offers' />

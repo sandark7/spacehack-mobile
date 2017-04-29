@@ -7,6 +7,7 @@ import {
 import I18n from 'react-native-i18n'
 import { connect } from 'react-redux'
 import Camera from 'react-native-camera'
+import Api from '../Helpers/ApiHelper'
 
 // Add Actions - replace 'Your' with whatever your reducer is called :)
 // import YourActions from '../Redux/YourRedux'
@@ -22,7 +23,8 @@ class Photo extends React.Component {
   }
 
   onCapture = ({path}) => {
-    console.log(path)
+    Api.upload(path)
+      .then(res => console.log(res))
   }
 
   render () {

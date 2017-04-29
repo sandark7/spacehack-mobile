@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Image } from 'react-native'
 import {Images} from '../Themes'
-import LayoutHelper from '../Helpers/LayoutHelper'
+import Layout from '../Helpers/LayoutHelper'
 import styles from './Styles/MainContentMockStyle'
 
 export default class MainContentMock extends React.Component {
@@ -10,7 +10,7 @@ export default class MainContentMock extends React.Component {
     return (
       <View style={styles.container}>
         <Image
-          onLayout={e => LayoutHelper(e, 3588, this)}
+          onLayout={e => Layout(e, 3588, this)}
           source={Images.main_middle_mock}
           style={imageSize}
         />

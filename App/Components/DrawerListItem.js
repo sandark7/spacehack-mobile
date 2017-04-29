@@ -5,11 +5,6 @@ import styles from './Styles/DrawerListItemStyle'
 import { Metrics } from '../Themes'
 import I18n from 'react-native-i18n'
 
-const {NativeModules} = require('react-native')
-const {RNI18n} = NativeModules
-
-console.log(RNI18n)
-
 export default class DrawerListItem extends React.Component {
 
   render () {

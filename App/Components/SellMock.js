@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Image } from 'react-native'
 import { Images } from '../Themes'
-import LayoutHelper from '../Helpers/LayoutHelper'
+import Layout from '../Helpers/LayoutHelper'
 import styles from './Styles/SellMockStyle'
 
 export default class SellMock extends React.Component {
@@ -10,7 +10,7 @@ export default class SellMock extends React.Component {
     return (
       <View style={styles.container}>
         <Image
-          onLayout={e => LayoutHelper(e, 2000, this)}
+          onLayout={e => Layout(e, 2000, this)}
           source={Images.sell_mock}
           style={imageSize}
         />

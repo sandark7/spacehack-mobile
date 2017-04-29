@@ -1,9 +1,15 @@
+import {Colors} from '../../Themes'
+
 export default {
   container: {
     flex: 1,
-    padding: 20
+    backgroundColor: Colors.snow
   },
   logo: {
-    alignSelf: 'center'
+    flex: 1,
+    resizeMode: 'contain',
+    height: 126,
+    width: null,
+    marginBottom: 3
   }
 }

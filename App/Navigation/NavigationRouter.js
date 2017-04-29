@@ -16,7 +16,12 @@ class NavigationRouter extends Component {
 
   renderLeftButton = () => {
     return (
-      <Icon name='navicon' size={Metrics.images.middle} color={Colors.snow} />
+      <Icon
+        style={Styles.drawerIcon}
+        name='navicon'
+        size={Metrics.icons.medium}
+        color={Colors.snow}
+      />
     )
   }
 
@@ -36,7 +41,8 @@ class NavigationRouter extends Component {
               key='launchScreen'
               drawerIcon={this.renderLeftButton()}
               component={MainScreen}
-              title='MainScreen'
+              title='ebay'
+              titleStyle={Styles.navTitle}
               hideNavBar={false}
             />
           </Scene>

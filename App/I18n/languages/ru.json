@@ -1,1 +1,14 @@
-{}
+{
+  "main_page": "Главная",
+  "notifications": "Уведомления",
+  "messages": "Сообщения",
+  "tracking": "Отслеживание",
+  "purchases": "Покупки",
+  "bids_n_offers": "Ставки и предложения",
+  "sells": "Продажи",
+  "subscriptions": "Подписки",
+  "categories": "Категории",
+  "sales": "Скидки",
+  "settings": "Настройки",
+  "help": "Справка и помощь"
+}

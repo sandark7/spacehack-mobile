@@ -14,6 +14,15 @@ export default {
     shadowRadius: 2,
     shadowOpacity: 0.5
   },
+  navTitle: {
+    fontWeight: '600',
+    textAlign: 'left',
+    fontSize: 25,
+    lineHeight: 23
+  },
+  drawerIcon: {
+    marginTop: 5.5
+  },
   title: {
     color: Colors.snow
   },

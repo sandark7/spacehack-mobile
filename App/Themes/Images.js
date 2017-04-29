@@ -1,7 +1,9 @@
 // leave off @2x/@3x
 const images = {
   main_middle_mock: require('../Images/main_com.ebay.mobile.png'),
-  logo: require('../Images/ir.png'),
+  sidebar_top_mock: require('../Images/sidebar_top.png'),
+  logo: require('../Images/ebay_logo.png'),
+  logo_white: require('../Images/ebay_logo_white.png'),
   clearLogo: require('../Images/top_logo.png'),
   launch: require('../Images/launch-icon.png'),
   ready: require('../Images/your-app.png'),

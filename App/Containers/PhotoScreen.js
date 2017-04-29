@@ -1,6 +1,13 @@
 import React from 'react'
-import { ScrollView, Text, KeyboardAvoidingView } from 'react-native'
+import {
+  View,
+  Text,
+  TouchableOpacity
+} from 'react-native'
+import I18n from 'react-native-i18n'
 import { connect } from 'react-redux'
+import Camera from 'react-native-camera'
+
 // Add Actions - replace 'Your' with whatever your reducer is called :)
 // import YourActions from '../Redux/YourRedux'
 
@@ -9,26 +16,47 @@ import styles from './Styles/PhotoScreenStyle'
 
 class Photo extends React.Component {
 
+  capture = () => {
+    this.camera.capture()
+      .then(this.onCapture)
+  }
+
+  onCapture = ({path}) => {
+    console.log(path)
+  }
+
   render () {
     return (
-      <ScrollView style={styles.container}>
-        <KeyboardAvoidingView behavior='position'>
-          <Text>Photo Screen</Text>
-        </KeyboardAvoidingView>
-      </ScrollView>
+      <View style={styles.container}>
+        <Camera
+          style={styles.cameraContainer}
+          captureQuality={Camera.constants.CaptureQuality.medium}
+          captureTarget={Camera.constants.CaptureTarget.disk}
+          ref={cam => { this.camera = cam; return }}
+          >
+          <TouchableOpacity
+            focusedOpacity={0.7}
+            activeOpacity={0.7}
+            onPress={this.capture}
+            style={styles.buttonContainer}
+            >
+            <Text
+              style={styles.buttonText}
+              >{I18n.t('capture')}</Text>
+          </TouchableOpacity>
+        </Camera>
+      </View>
     )
   }
 
 }
 
 const mapStateToProps = (state) => {
-  return {
-  }
+  return {}
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-  }
+  return {}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Photo)

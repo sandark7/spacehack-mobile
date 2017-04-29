@@ -55,6 +55,7 @@ class NavigationRouter extends Component {
               titleStyle={Styles.navTitleNormal}
             />
             <Scene
+              hideNavBar
               key='photoScreen'
               component={PhotoScreen}
             />

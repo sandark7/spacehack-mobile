@@ -1,16 +1,16 @@
 import { StyleSheet } from 'react-native'
-import { Colors } from '../../Themes/'
+import { Metrics, Colors } from '../../Themes/'
 
 export default StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'row',
-    padding: 8
+    padding: Metrics.baseMargin
   },
   icon: {
     color: Colors.silver,
     flex: 1,
-    marginLeft: 10
+    marginLeft: Metrics.baseMargin
   },
   text: {
     color: Colors.coal,

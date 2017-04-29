@@ -3,10 +3,8 @@ import { ScrollView, KeyboardAvoidingView, Button } from 'react-native'
 import { connect } from 'react-redux'
 import {Actions} from 'react-native-router-flux'
 import I18n from 'react-native-i18n'
-// Add Actions - replace 'Your' with whatever your reducer is called :)
-// import YourActions from '../Redux/YourRedux'
+import SellMock from '../Components/SellMock'
 
-// Styles
 import styles from './Styles/SaleScreenStyle'
 
 class SaleScreen extends React.Component {
@@ -19,6 +17,7 @@ class SaleScreen extends React.Component {
     return (
       <ScrollView style={styles.container}>
         <KeyboardAvoidingView behavior='position'>
+          <SellMock />
           <Button
             style={styles.button}
             onPress={this.onPress}

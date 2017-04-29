@@ -5,8 +5,6 @@ import {
 } from 'react-native'
 import { connect } from 'react-redux'
 import MainContentMock from '../Components/MainContentMock'
-// Add Actions - replace 'Your' with whatever your reducer is called :)
-// import YourActions from '../Redux/YourRedux'
 
 // Styles
 import styles from './Styles/MainScreenStyle'

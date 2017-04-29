@@ -15,7 +15,7 @@ export default StyleSheet.create({
   text: {
     color: Colors.coal,
     fontSize: 12,
-    fontWeight: '500',
+    fontWeight: '700',
     lineHeight: 20,
     flex: 4
   }

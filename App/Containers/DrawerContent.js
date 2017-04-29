@@ -36,11 +36,12 @@ class DrawerContent extends Component {
         <DrawerListItem icon='notifications' title='notifications' />
         <DrawerListItem icon='email' title='messages' />
         <DrawerListItem icon='visibility' title='tracking' />
-        <DrawerListItem icon='purchase' title='purchases' />
-        <DrawerListItem icon='bid' title='bids_n_offers' />
-        <DrawerListItem onPress={() => this.onPress('saleScreen')} icon='sale' title='sells' />
-        <DrawerListItem icon='subscription' title='subscriptions' />
-        <DrawerListItem icon='category' title='categories' />
+        <DrawerListItem icon='featured-video' title='purchases' />
+        <DrawerListItem icon='gavel' title='bids_n_offers' />
+        <DrawerListItem onPress={() => this.onPress('saleScreen')} icon='local-offer' title='sells' />
+        <DrawerListItem icon='youtube-searched-for' title='subscriptions' />
+        <DrawerListItem icon='more' title='categories' />
+        <DrawerListItem icon='flash-on' title='sales' />
         <DrawerListItem icon='settings' title='settings' />
         <DrawerListItem icon='help' title='help' />
       </ScrollView>

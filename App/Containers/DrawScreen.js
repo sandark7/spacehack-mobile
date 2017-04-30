@@ -12,7 +12,17 @@ import styles from './Styles/DrawScreenStyle'
 
 class Draw extends React.Component {
 
+  constructor () {
+    super()
+    this.loading = true
+  }
+
+  isLoading = () => this.loading
+
   render () {
+    setTimeout(() => {
+      this.loading = false
+    }, 5000)
     let {imageUrl: uri} = this.props
     console.log(uri)
     return (
@@ -20,7 +30,7 @@ class Draw extends React.Component {
         <Image
           style={styles.image}
           source={{uri}}
-          />
+        />
       </View>
     )
   }

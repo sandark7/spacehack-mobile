@@ -4573,6 +4573,10 @@ react-native-i18n@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/react-native-i18n/-/react-native-i18n-1.0.0.tgz#0c407d9ebb846aae1aa5e05de6503008553f02fd"
 
+react-native-loading-spinner-overlay@0.4.4:
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/react-native-loading-spinner-overlay/-/react-native-loading-spinner-overlay-0.4.4.tgz#a19daea11787b1b539a2fa15945ab6f8bb97cd8c"
+
 react-native-mock@^0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/react-native-mock/-/react-native-mock-0.3.1.tgz#13d22433c5351a8a7fb8aedd7862b614d087851c"

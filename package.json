@@ -40,6 +40,7 @@
     "react-native-fetch-blob": "^0.10.4",
     "react-native-gestures": "0.3.0",
     "react-native-i18n": "^1.0.0",
+    "react-native-loading-spinner-overlay": "0.4.4",
     "react-native-router-flux": "3.38.0",
     "react-native-vector-icons": "^4.0.1",
     "react-redux": "5.0.4",

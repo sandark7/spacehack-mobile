@@ -37,7 +37,7 @@ export default {
       })
         .then(res => res.json(), reject)
         .then(data => {
-          data.photo_url = `${API_PHOTO_URL}${data.photo_url}`
+          data.photo_url = `${API_PHOTO_URL}${data.photo_url}?rnd=${Date.now()}`
           return data
         }, reject)
         .then(resolve, reject)
@@ -45,10 +45,10 @@ export default {
   },
 
   getImageURL ({x1, x2, y1, y2, url}) {
-    x1 = x1.toFixed(0)
-    x2 = x2.toFixed(0)
-    y1 = y1.toFixed(0)
-    y2 = y2.toFixed(0)
+    x1 = Math.max(x1.toFixed(0), 0)
+    x2 = Math.max(x2.toFixed(0), 0)
+    y1 = Math.max(y1.toFixed(0), 0)
+    y2 = Math.max(y2.toFixed(0), 0)
     return `${API_COORD_URL}/${x1}/${y1}/${x2}/${y2}?image_url=${url}`
   }
 

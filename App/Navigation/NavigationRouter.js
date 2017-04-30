@@ -8,6 +8,7 @@ import I18n from 'react-native-i18n'
 import MainScreen from '../Containers/MainScreen'
 import SaleScreen from '../Containers/SaleScreen'
 import PhotoScreen from '../Containers/PhotoScreen'
+import BoxScreen from '../Containers/BoxScreen'
 
 import Icon from 'react-native-vector-icons/EvilIcons'
 /* **************************
@@ -58,6 +59,11 @@ class NavigationRouter extends Component {
               hideNavBar
               key='photoScreen'
               component={PhotoScreen}
+            />
+            <Scene
+              hideNavBar
+              key='boxScreen'
+              component={BoxScreen}
             />
           </Scene>
         </Scene>

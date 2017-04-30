@@ -1,18 +1,41 @@
-import RNFetchBlob from 'react-native-fetch-blob'
+import {
+  ImageStore
+} from 'react-native'
 
-const POST_URL = 'http://10.91.4.17:3000/frame'
+const API_URL = 'http://10.91.5.40:3000/frame'
 
 export default {
+
   upload (file) {
-    return RNFetchBlob.fetch(
-      'POST',
-      POST_URL,
-      {
-        'Content-Type': 'application/octet-stream'
-      },
-      RNFetchBlob.wrap(file)
-    )
-      .then(res => res.text)
-      .catch(console.error)
+    return new Promise((resolve, reject) => {
+      ImageStore.getBase64ForTag(file, photo => {
+        photo = photo.split('\n').join('')
+        let data = {frame: {photo}}
+        fetch(API_URL, {
+          method: 'PUT',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        })
+          .then(resolve, reject)
+      }, reject)
+    })
+  },
+
+  get () {
+    return new Promise((resolve, reject) => {
+      fetch(API_URL, {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(res => res.json(), reject)
+        .then(resolve, reject)
+    })
   }
+
 }

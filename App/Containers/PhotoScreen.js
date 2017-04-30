@@ -5,6 +5,7 @@ import {
   TouchableOpacity
 } from 'react-native'
 import I18n from 'react-native-i18n'
+import {Actions} from 'react-native-router-flux'
 import { connect } from 'react-redux'
 import Camera from 'react-native-camera'
 import Api from '../Helpers/ApiHelper'
@@ -23,9 +24,22 @@ class Photo extends React.Component {
   }
 
   onCapture = ({path}) => {
+    console.log('uploading')
     Api.upload(path)
-      .then(res => console.log(res))
+      .then(this.onUploadResponse, this.onError)
   }
+  onUploadResponse = res => {
+    if (!res.ok) return
+    console.log('got ok')
+    Api.get()
+      .then(this.onGetBoundingBox, this.onError)
+  }
+
+  onGetBoundingBox = data => {
+    Actions.boxScreen(data)
+  }
+
+  onError = console.error.bind(console)
 
   render () {
     return (

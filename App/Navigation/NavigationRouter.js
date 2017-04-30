@@ -41,6 +41,7 @@ class NavigationRouter extends Component {
             rightButtonTextStyle={Styles.rightButton}
           >
             <Scene
+              initial
               hideBackImage
               key='mainScreen'
               drawerIcon={this.renderLeftButton()}
@@ -56,7 +57,6 @@ class NavigationRouter extends Component {
               titleStyle={Styles.navTitleNormal}
             />
             <Scene
-              initial
               hideNavBar
               key='photoScreen'
               component={PhotoScreen}

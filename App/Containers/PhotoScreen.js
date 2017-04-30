@@ -2,6 +2,7 @@ import React from 'react'
 import {
   View,
   Text,
+  Image,
   TouchableOpacity
 } from 'react-native'
 import I18n from 'react-native-i18n'
@@ -24,22 +25,34 @@ class Photo extends React.Component {
   }
 
   onCapture = ({path}) => {
+    this.loading = true
     console.log('uploading')
     Api.upload(path)
       .then(this.onUploadResponse, this.onError)
   }
   onUploadResponse = res => {
-    if (!res.ok) return
+    if (!res.ok) return (this.loading = false)
     console.log('got ok')
     Api.get()
       .then(this.onGetBoundingBox, this.onError)
   }
 
   onGetBoundingBox = data => {
-    Actions.boxScreen(data)
+    console.log('got data', data)
+    let {photo_url} = data
+    Image.getSize(photo_url, (width, height) => {
+      Actions.boxScreen({...data, width, height})
+    }, console.error)
   }
 
-  onError = console.error.bind(console)
+  onError = (err) => {
+    this.loading = false
+    console.error(err)
+  }
+
+  isLoading = () => {
+    return this.loading
+  }
 
   render () {
     return (
@@ -48,7 +61,7 @@ class Photo extends React.Component {
           style={styles.cameraContainer}
           captureQuality={Camera.constants.CaptureQuality.medium}
           captureTarget={Camera.constants.CaptureTarget.disk}
-          ref={cam => { this.camera = cam; return }}
+          ref={cam => (this.camera = cam)}
           >
           <TouchableOpacity
             focusedOpacity={0.7}
@@ -58,7 +71,7 @@ class Photo extends React.Component {
             >
             <Text
               style={styles.buttonText}
-              >{I18n.t('capture')}</Text>
+              >{this.isLoading() ? I18n.t('loading') : I18n.t('capture')}</Text>
           </TouchableOpacity>
         </Camera>
       </View>

@@ -1,21 +1,27 @@
 import React from 'react'
-import { ScrollView, Text, KeyboardAvoidingView } from 'react-native'
+import {
+  Image,
+  View
+} from 'react-native'
 import { connect } from 'react-redux'
 // Add Actions - replace 'Your' with whatever your reducer is called :)
 // import YourActions from '../Redux/YourRedux'
 
 // Styles
-import styles from './Styles/DrawStyle'
+import styles from './Styles/DrawScreenStyle'
 
 class Draw extends React.Component {
 
   render () {
+    let {imageUrl: uri} = this.props
+    console.log(uri)
     return (
-      <ScrollView style={styles.container}>
-        <KeyboardAvoidingView behavior='position'>
-          <Text>Draw Screen</Text>
-        </KeyboardAvoidingView>
-      </ScrollView>
+      <View style={styles.container}>
+        <Image
+          style={styles.image}
+          source={{uri}}
+          />
+      </View>
     )
   }
 

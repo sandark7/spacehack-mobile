@@ -4,6 +4,7 @@ import {
 
 const API_URL = 'http://10.91.5.40:3000/frame'
 const API_COORD_URL = 'http://10.91.5.40:5000'
+const API_PHOTO_URL = 'http://10.91.5.40:8082'
 
 export default {
 
@@ -35,11 +36,19 @@ export default {
         }
       })
         .then(res => res.json(), reject)
+        .then(data => {
+          data.photo_url = `${API_PHOTO_URL}${data.photo_url}`
+          return data
+        }, reject)
         .then(resolve, reject)
     })
   },
 
   getImageURL ({x1, x2, y1, y2, url}) {
+    x1 = x1.toFixed(0)
+    x2 = x2.toFixed(0)
+    y1 = y1.toFixed(0)
+    y2 = y2.toFixed(0)
     return `${API_COORD_URL}/${x1}/${y1}/${x2}/${y2}?image_url=${url}`
   }
 

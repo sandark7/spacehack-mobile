@@ -5,12 +5,11 @@ import {
   Image,
   TouchableOpacity
 } from 'react-native'
-import { connect } from 'react-redux'
 // Add Actions - replace 'Your' with whatever your reducer is called :)
 // import YourActions from '../Redux/YourRedux'
 import { Metrics } from '../Themes'
 import I18n from 'react-native-i18n'
-import {Actions} from 'react-native-router-flux'
+import { Actions } from 'react-native-router-flux'
 import Api from '../Helpers/ApiHelper'
 import {
   drag,
@@ -21,6 +20,9 @@ import {
 // Styles
 import styles, { box as boxStyles, photo as photoStyles } from './Styles/BoxScreenStyle'
 
+import { connect } from 'react-redux'
+const GLOBAL = {}
+
 class Box extends React.Component {
 
   toStyle = ({
@@ -29,11 +31,11 @@ class Box extends React.Component {
                width,
                height
              }) => {
-    this.boundingBox = {
-      x1: left,
-      y1: top,
-      x2: left + width,
-      y2: top + height
+    GLOBAL.boundingBox = {
+      x1: left / GLOBAL.propW,
+      y1: top / GLOBAL.propH,
+      x2: (left + width) / GLOBAL.propW,
+      y2: (top + height) / GLOBAL.propH
     }
     return {
       ...boxStyles,
@@ -45,7 +47,7 @@ class Box extends React.Component {
   }
 
   onNext = () => {
-    let imageUrl = Api.getImageURL({...this.boundingBox, url: this.props.photo_url})
+    let imageUrl = Api.getImageURL({...GLOBAL.boundingBox, url: this.props.photo_url})
     Actions.drawScreen({imageUrl})
   }
 
@@ -68,6 +70,9 @@ class Box extends React.Component {
     let propH = realH / height
     let propW = realW / width
 
+    GLOBAL.propH = propH
+    GLOBAL.propW = propW
+
     x = propW * x
     y = propH * y
     bottomRightX = propW * bottomRightX
@@ -75,6 +80,15 @@ class Box extends React.Component {
 
     let boxWidth = bottomRightX - x
     let boxHeight = bottomRightY - y
+
+    if (!GLOBAL.boundingBox) {
+      GLOBAL.boundingBox = {
+        x1: x / propW,
+        y1: y / propH,
+        x2: bottomRightX / propW,
+        y2: bottomRightY / propH
+      }
+    }
 
     return (
       <View style={styles.container}>
@@ -104,7 +118,7 @@ class Box extends React.Component {
         <TouchableOpacity
           focusedOpacity={0.7}
           activeOpacity={0.7}
-          onPress={this.onNext}
+          onPress={() => this.onNext()}
           style={styles.buttonContainer}
         >
           <Text
